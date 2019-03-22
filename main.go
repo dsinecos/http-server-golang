@@ -10,6 +10,8 @@ type hotdog int
 
 func (h hotdog) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintln(w, "Response from Hotdog handler")
+	fmt.Printf("Method %s \n", req.Method)
+	fmt.Printf("User-Agent %s \n", req.UserAgent())
 }
 
 func main() {
